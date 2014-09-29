@@ -1,8 +1,9 @@
-FROM sameersbn/debian:jessie.20140918
+FROM raiscui/ssh-ubuntu:ch-SRC-aptfast
 MAINTAINER sameer@damagehead.com
 
-RUN apt-get update \
- && apt-get install -y supervisor logrotate locales \
+RUN apt-fast update -y \
+ && apt-fast upgrade -y \
+ && apt-fast install -y supervisor logrotate locales \
       nginx openssh-server mysql-server redis-tools \
       git-core postgresql-client ruby rubygems \
       python2.7 python-docutils \
